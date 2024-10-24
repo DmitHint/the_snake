@@ -209,7 +209,8 @@ def handle_keys(snake, current_speed):
             else:
                 # Получаем новое направление из словаря
                 new_direction = direction_map.get(event.key)
-                snake.next_direction = new_direction
+                if (new_direction[0] + snake.direction[0], new_direction[1] + snake.direction[1]) != (0, 0):
+                    snake.next_direction = new_direction
 
     return current_speed
 
